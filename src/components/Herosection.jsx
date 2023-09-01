@@ -4,7 +4,6 @@ import lottery from "../assets/images/lottery.png";
 import CarousalSlider from "../components/CarousalSlider";
 
 function Herosection() {
-  // let [isOpen, setIsOpen] = useState(true);
 
   const GamesData = [
     {
@@ -29,13 +28,7 @@ function Herosection() {
     },
   ];
 
-  // function closeModal() {
-  //   setIsOpen(false);
-  // }
-
-  // function openModal() {
-  //   setIsOpen(true);
-  // }
+ 
   return (
     <>
       <div className="max-w-[1100px] m-auto text-white ">
@@ -65,10 +58,7 @@ function Herosection() {
           </div>
         </div>
       </div>
-      {/* <div onClick={openModal} className="text-white">
-        Open
-      </div>
-      <LoginModal isOpen={isOpen} closeModal={closeModal} /> */}
+      
     </>
   );
 }

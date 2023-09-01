@@ -2,8 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap");
-
 body {
   background-color: #0c1228;
   font-family: "Montserrat", sans-serif;
@@ -12,7 +10,6 @@ body {
   font-family: "Montserrat";
   src: url(../src/assets/fonts/Montserrat-VariableFont_wght.ttf);
 }
-
 
 .gradient {
   background: linear-gradient(90deg, #4776e6 0%, #8e54e9 100%);

@@ -1,8 +1,19 @@
+import { useState } from "react";
 import Logo from "../assets/images/Logo.png";
 import eth from "../assets/images/eth.png";
 import DropDown from "../common/DropDown";
+import LoginModal from "../common/LoginModal";
 
 function Header() {
+  let [isOpen, setIsOpen] = useState(true);
+
+  function closeModal() {
+    setIsOpen(false);
+  }
+
+  function openModal() {
+    setIsOpen(true);
+  }
   return (
     <>
       <div className="bg-rhino">
@@ -36,13 +47,18 @@ function Header() {
               </button>
             </div>
             <div>
-              <button className="font-Montserrat text-lg gradient font-semibold px-7 py-[3px] bg-red-500 rounded-[10px] ">
+              <button
+                className="font-Montserrat text-lg gradient font-semibold px-7 py-[3px] bg-red-500 rounded-[10px] "
+                onClick={openModal}
+              >
                 Connect
               </button>
             </div>
           </div>
         </div>
       </div>
+
+      <LoginModal isOpen={isOpen} closeModal={closeModal} />
     </>
   );
 }
