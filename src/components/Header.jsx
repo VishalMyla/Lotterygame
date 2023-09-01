@@ -5,7 +5,7 @@ import DropDown from "../common/DropDown";
 import LoginModal from "../common/LoginModal";
 
 function Header() {
-  let [isOpen, setIsOpen] = useState(true);
+  let [isOpen, setIsOpen] = useState(false);
 
   function closeModal() {
     setIsOpen(false);
@@ -32,7 +32,7 @@ function Header() {
               </div>
             </div>
             <div>
-              <button className="font-Montserrat text-lg gradient font-semibold px-7 py-[9px] bg-red-500 rounded-[5px] ">
+              <button className="font-Montserrat text-lg gradient font-semibold px-7 py-[9px]  rounded-[5px] ">
                 Deposit
               </button>
             </div>
@@ -48,7 +48,7 @@ function Header() {
             </div>
             <div>
               <button
-                className="font-Montserrat text-lg gradient font-semibold px-7 py-[3px] bg-red-500 rounded-[10px] "
+                className="font-Montserrat text-lg gradient font-semibold px-7 py-[3px]  rounded-[10px] "
                 onClick={openModal}
               >
                 Connect

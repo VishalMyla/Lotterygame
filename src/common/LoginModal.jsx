@@ -52,7 +52,7 @@ function LoginModal({ isOpen, closeModal }) {
                               (Can be changed later)
                             </span>
                           </label>
-                          <input className="rounded-[5px] bg-alto/[13%] w-[437px] h-[50px]  focus:outline-none" />
+                          <input className="rounded-[5px] p-2 bg-alto/[13%] w-[437px] h-[50px]  focus:outline-none" />
                         </div>
                         <div className="mt-14  gradient rounded-[5px]">
                           <button className="px-[122px] py-2 text-2xl font-semibold text-white">
