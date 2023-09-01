@@ -56,7 +56,7 @@ function CarousalSlider() {
                   swiper.navigation.update();
                 });
               }}
-              modules={[Navigation , Pagination, Autoplay]}
+              modules={[Navigation, Pagination, Autoplay]}
             >
               {WORKS.map((item, i) => {
                 return (
@@ -64,14 +64,13 @@ function CarousalSlider() {
                     <div className=" rounded-xl p-4 md:p-6 lg:p-8">
                       <img
                         src={item.image}
-                        className="rounded-md w-full"
+                        className="rounded-md w-full h-[360px] object-fill "
                         alt=""
                       />
                     </div>
                   </SwiperSlide>
                 );
               })}
-             
             </Swiper>
           </div>
           {/* </div> */}

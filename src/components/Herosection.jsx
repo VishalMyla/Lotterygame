@@ -1,7 +1,7 @@
 import bingo from "../assets/images/bingo.png";
 import lottery from "../assets/images/lottery.png";
 // import LoginModal from "../common/LoginModal";
-import CarousalSlider from "../components/CarousalSlider";
+import CarousalSlider from "../common/CarousalSlider";
 
 function Herosection() {
 
