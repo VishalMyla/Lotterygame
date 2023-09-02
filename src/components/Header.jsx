@@ -16,7 +16,7 @@ function Header() {
   }
   return (
     <>
-      <div className="bg-rhino">
+      <div className="bg-rhino sticky top-0 z-10">
         <div className="flex justify-between items-center px-16 py-[18px]">
           <div>
             <a href="/" target="_self">
