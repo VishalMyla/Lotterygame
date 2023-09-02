@@ -5,7 +5,7 @@ import LoginLogo from "../assets/images/LoginLogo.png";
 
 function LoginModal({ isOpen, closeModal, onCreatAccount }) {
   return (
-    <div>
+    <div className="px-10">
       <Transition appear show={isOpen} as={Fragment}>
         <Dialog as="div" className="relative z-10" onClose={closeModal}>
           <Transition.Child
@@ -33,18 +33,18 @@ function LoginModal({ isOpen, closeModal, onCreatAccount }) {
               >
                 <Dialog.Panel className="  transform  bg-rhino rounded-[20px]  text-left align-middle shadow-xl transition-all">
                   <div className="flex md:w-[1100px] lg:w-[1200px]">
-                    <div className="w-[476px] bg-white/[5%] rounded-l-[20px] flex items-center">
+                    <div className="w-[476px] hidden md:flex bg-white/[5%] rounded-l-[20px]  items-center">
                       <img
                         src={LoginPubg}
                         alt="LoginPubg"
                         className="w-[512px] h-[512px]"
                       />
                     </div>
-                    <div>
-                      <div className="flex justify-center pt-24 ">
+                    <div className="pb-10 px-4">
+                      <div className=" flex justify-center pt-24 ">
                         <img src={LoginLogo} alt="" />
                       </div>
-                      <div className="w-[770px] flex flex-col items-center pt-24   justify-center">
+                      <div className="w-fit md:w-[770px] flex flex-col items-center pt-24   justify-center">
                         <div className="text-white font-bold text-[22px] ">
                           <label className="flex items-center gap-2">
                             Nickname
@@ -52,11 +52,11 @@ function LoginModal({ isOpen, closeModal, onCreatAccount }) {
                               (Can be changed later)
                             </span>
                           </label>
-                          <input className="rounded-[5px] p-2 bg-alto/[13%] w-[437px] h-[50px]  focus:outline-none" />
+                          <input className="rounded-[5px] p-2 bg-alto/[13%] w-[17rem] md:w-[437px] h-[50px]  focus:outline-none" />
                         </div>
                         <div className="mt-14  gradient rounded-[5px]">
                           <button
-                            className="px-[122px] py-2 text-2xl font-semibold text-white"
+                            className=" px-5 md:px-[122px] py-2 text-2xl font-semibold text-white"
                             onClick={onCreatAccount}
                           >
                             Create Account
