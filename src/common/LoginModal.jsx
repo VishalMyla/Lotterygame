@@ -3,7 +3,7 @@ import { Fragment } from "react";
 import LoginPubg from "../assets/images/LoginPubg.png";
 import LoginLogo from "../assets/images/LoginLogo.png";
 
-function LoginModal({ isOpen, closeModal }) {
+function LoginModal({ isOpen, closeModal, onCreatAccount }) {
   return (
     <div>
       <Transition appear show={isOpen} as={Fragment}>
@@ -55,7 +55,7 @@ function LoginModal({ isOpen, closeModal }) {
                           <input className="rounded-[5px] p-2 bg-alto/[13%] w-[437px] h-[50px]  focus:outline-none" />
                         </div>
                         <div className="mt-14  gradient rounded-[5px]">
-                          <button className="px-[122px] py-2 text-2xl font-semibold text-white">
+                          <button className="px-[122px] py-2 text-2xl font-semibold text-white" onClick={onCreatAccount}>
                             Create Account
                           </button>
                         </div>
