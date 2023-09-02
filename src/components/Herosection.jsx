@@ -4,7 +4,6 @@ import lottery from "../assets/images/lottery.png";
 import CarousalSlider from "../common/CarousalSlider";
 
 function Herosection() {
-
   const GamesData = [
     {
       image: bingo,
@@ -28,20 +27,23 @@ function Herosection() {
     },
   ];
 
- 
   return (
     <>
-      <div className="max-w-[1100px] m-auto text-white ">
+      <div className="max-w-[1024px] px-4 m-auto text-white ">
         <CarousalSlider />
         <div className="mt-16">
           <h1 className="text-3xl">Available Games</h1>
           <div className="pt-11">
-            <div className="grid grid-cols-4 gap-4">
+            <div className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-4">
               {GamesData.map((value, id) => {
                 return (
                   <>
                     <div className=" rounded-[15px] bg-rhino" key={id}>
-                      <img src={value.image} alt="" className="w-72" />
+                      <img
+                        src={value.image}
+                        alt=""
+                        className=" w-[100%] lg:w-72"
+                      />
                       <div className="flex flex-col  items-center py-[5px]">
                         <span className="text-lg font-semibold">
                           {value.heading}
@@ -58,7 +60,6 @@ function Herosection() {
           </div>
         </div>
       </div>
-      
     </>
   );
 }

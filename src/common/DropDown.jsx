@@ -22,7 +22,7 @@ function DropDown() {
     {
       imgUrl: Referral,
       btntitle: "Referral",
-      path: "/",
+      path: "/referralprogram",
     },
     {
       imgUrl: LogOut,

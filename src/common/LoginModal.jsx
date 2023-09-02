@@ -32,7 +32,7 @@ function LoginModal({ isOpen, closeModal, onCreatAccount }) {
                 leaveTo="opacity-0 scale-95"
               >
                 <Dialog.Panel className="  transform  bg-rhino rounded-[20px]  text-left align-middle shadow-xl transition-all">
-                  <div className="flex w-[1246px] h-[669px]">
+                  <div className="flex md:w-[1100px] lg:w-[1200px]">
                     <div className="w-[476px] bg-white/[5%] rounded-l-[20px] flex items-center">
                       <img
                         src={LoginPubg}
@@ -55,7 +55,10 @@ function LoginModal({ isOpen, closeModal, onCreatAccount }) {
                           <input className="rounded-[5px] p-2 bg-alto/[13%] w-[437px] h-[50px]  focus:outline-none" />
                         </div>
                         <div className="mt-14  gradient rounded-[5px]">
-                          <button className="px-[122px] py-2 text-2xl font-semibold text-white" onClick={onCreatAccount}>
+                          <button
+                            className="px-[122px] py-2 text-2xl font-semibold text-white"
+                            onClick={onCreatAccount}
+                          >
                             Create Account
                           </button>
                         </div>
