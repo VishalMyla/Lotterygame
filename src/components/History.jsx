@@ -5,7 +5,7 @@ function History() {
         <div className="py-14 text-center">
           <h1 className="text-5xl font-semibold text-white">History</h1>
         </div>
-        <div className=" w-auto overflow-scroll flex justify-center  border border-white/[70%] text-white rounded-[5px]">
+        <div className=" w-auto overflow-scroll md:overflow-hidden flex justify-center  border border-white/[70%] text-white rounded-[5px]">
           <table className="w-full">
             <thead className="bg-rhino">
               <tr className="text-justify">

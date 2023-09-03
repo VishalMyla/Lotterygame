@@ -10,7 +10,7 @@ const DropValue = [
   {
     imgUrl: Profile,
     btntitle: "Profile",
-    path: "/",
+    path: "/Profile",
   },
   {
     imgUrl: History,
