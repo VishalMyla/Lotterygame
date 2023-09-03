@@ -29,7 +29,7 @@ function Profile() {
               placeholder="Woodco76"
               className="w-full rounded-[3px] bg-alto/[13%] h-10 focus:outline-none p-2"
             />
-            <div className="  flex absolute text-white right-3 bg-slate-400 p-2 rounded-[5px] top-2  md:top-2 ">
+            <div className=" cursor-pointer flex absolute text-white right-3 bg-slate-400 p-2 rounded-[5px] top-2  md:top-2 ">
               <MdEdit />
             </div>
           </div>
@@ -41,7 +41,7 @@ function Profile() {
               placeholder="0xE3Fc41...2E0D5f43"
               className="w-full rounded-[3px] bg-alto/[13%] h-10 focus:outline-none p-2"
             />
-            <div className="  flex absolute text-white right-3 bg-slate-400 p-2 rounded-[5px] top-2  md:top-2 ">
+            <div className=" cursor-pointer flex absolute text-white right-3 bg-slate-400 p-2 rounded-[5px] top-2  md:top-2 ">
               <BiCopy />
             </div>
           </div>
@@ -53,7 +53,7 @@ function Profile() {
               placeholder="-"
               className="w-full rounded-[3px] bg-alto/[13%] h-10 focus:outline-none p-2"
             />
-            <div className=" text-xs font-semibold flex items-center gap-1 absolute text-white right-3 bg-[#54a9eb] p-2 rounded-[5px]  top-2  md:top-2 ">
+            <div className=" text-xs cursor-pointer font-semibold flex items-center gap-1 absolute text-white right-3 bg-[#54a9eb] p-2 rounded-[5px]  top-2  md:top-2 ">
               <BiLogoTelegram className="text-lg" /> Connect My Telegram
             </div>
           </div>
@@ -76,7 +76,7 @@ function Profile() {
               placeholder="Here you can setup self-exclusion period."
               className="w-full rounded-[3px] bg-alto/[13%] h-10 focus:outline-none p-2"
             />
-            <div className=" text-xs px-5 font-semibold bg-[#1cab70]  flex items-center  absolute text-white right-3  p-2 rounded-[5px]  top-2  md:top-2 ">
+            <div className=" cursor-pointer text-xs px-5 font-semibold bg-[#1cab70]  flex items-center  absolute text-white right-3  p-2 rounded-[5px]  top-2  md:top-2 ">
               Set Self-Exclusion Period
             </div>
           </div>
