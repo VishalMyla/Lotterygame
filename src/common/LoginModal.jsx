@@ -5,7 +5,7 @@ import LoginLogo from "../assets/images/LoginLogo.png";
 
 function LoginModal({ isOpen, closeModal, onCreatAccount }) {
   return (
-    <div className="px-10">
+    <div className="container mx-auto ">
       <Transition appear show={isOpen} as={Fragment}>
         <Dialog as="div" className="relative z-10" onClose={closeModal}>
           <Transition.Child
@@ -21,7 +21,7 @@ function LoginModal({ isOpen, closeModal, onCreatAccount }) {
           </Transition.Child>
 
           <div className="fixed inset-0 overflow-y-auto">
-            <div className="flex min-h-full items-center justify-center  text-center">
+            <div className="flex px-4 min-h-full items-center justify-center  text-center">
               <Transition.Child
                 as={Fragment}
                 enter="ease-out duration-300"
@@ -31,32 +31,36 @@ function LoginModal({ isOpen, closeModal, onCreatAccount }) {
                 leaveFrom="opacity-100 scale-100"
                 leaveTo="opacity-0 scale-95"
               >
-                <Dialog.Panel className="  transform  bg-rhino rounded-[20px]  text-left align-middle shadow-xl transition-all">
-                  <div className="flex md:w-[1100px] lg:w-[1200px]">
-                    <div className="w-[476px] hidden md:flex bg-white/[5%] rounded-l-[20px]  items-center">
+                <Dialog.Panel className=" w-[100%] lg:w-fit  transform  bg-rhino rounded-[20px]  text-left align-middle shadow-xl transition-all">
+                  <div className="flex justify-center items-center px-2 ">
+                    <div className="lg:w-[512px] md:w-[400px]  hidden md:block">
                       <img
                         src={LoginPubg}
                         alt="LoginPubg"
-                        className="w-[512px] h-[512px]"
+                        className="  md:h-[400px] lg:h-[512px]"
                       />
                     </div>
-                    <div className="pb-10 px-4">
-                      <div className=" flex justify-center pt-24 ">
-                        <img src={LoginLogo} alt="" />
+                    <div className="w-[512px]">
+                      <div className="  flex justify-center">
+                        <img
+                          src={LoginLogo}
+                          alt=""
+                          className="w-52 md:w-fit py-5"
+                        />
                       </div>
-                      <div className="w-fit md:w-[770px] flex flex-col items-center pt-24   justify-center">
-                        <div className="text-white font-bold text-[22px] ">
+                      <div className="flex flex-col items-center ">
+                        <div className="text-white font-bold md:text-[22px] ">
                           <label className="flex items-center gap-2">
                             Nickname
                             <span className="text-manatee font-medium text-xs">
                               (Can be changed later)
                             </span>
                           </label>
-                          <input className="rounded-[5px] p-2 bg-alto/[13%] w-[17rem] md:w-[437px] h-[50px]  focus:outline-none" />
+                          <input className="rounded-[5px] p-2 bg-alto/[13%] w-full  h-[45px]  focus:outline-none" />
                         </div>
-                        <div className="mt-14  gradient rounded-[5px]">
+                        <div className="my-5 md:my-14 gradient rounded-[5px]">
                           <button
-                            className=" px-5 md:px-[122px] py-2 text-2xl font-semibold text-white"
+                            className=" px-5  py-2 text-2xl font-semibold text-white"
                             onClick={onCreatAccount}
                           >
                             Create Account

@@ -1,49 +1,56 @@
 import { Menu, Transition } from "@headlessui/react";
-import { Fragment } from "react";
-import { ChevronUpIcon } from "@heroicons/react/20/solid";
+import { Fragment, useState } from "react";
+import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/20/solid";
 import UserLogo from "../assets/images/UserLogo.png";
 import History from "../assets/images/History.png";
 import LogOut from "../assets/images/Log Out.png";
 import Referral from "../assets/images/Referral.png";
 import Profile from "../assets/images/Profile.png";
-
+const DropValue = [
+  {
+    imgUrl: Profile,
+    btntitle: "Profile",
+    path: "/",
+  },
+  {
+    imgUrl: History,
+    btntitle: "History",
+    path: "/history",
+  },
+  {
+    imgUrl: Referral,
+    btntitle: "Referral",
+    path: "/referralprogram",
+  },
+  {
+    imgUrl: LogOut,
+    btntitle: "Log Out",
+    path: "/",
+  },
+];
 function DropDown() {
-  const DropValue = [
-    {
-      imgUrl: Profile,
-      btntitle: "Profile",
-      path: "/",
-    },
-    {
-      imgUrl: History,
-      btntitle: "History",
-      path: "/history",
-    },
-    {
-      imgUrl: Referral,
-      btntitle: "Referral",
-      path: "/referralprogram",
-    },
-    {
-      imgUrl: LogOut,
-      btntitle: "Log Out",
-      path: "/",
-    },
-  ];
+  const [open, setOpen] = useState(false);
   return (
     <>
       <div className="text-right">
         <Menu as="div" className="relative inline-block text-left">
-          <div>
+          <div onClick={() => setOpen(!open)}>
             <Menu.Button className="inline-flex w-full justify-center    px-4 py-2 text-sm font-medium text-white gap-2  items-center ">
               <div>
                 <img src={UserLogo} alt="" />
               </div>
               <span className="text-lg font-semibold">Abc Xyz</span>
-              <ChevronUpIcon
-                className="ml-2 -mr-1 h-5 w-5 text-violet-200 hover:text-violet-100"
-                aria-hidden="true"
-              />
+              {open ? (
+                <ChevronUpIcon
+                  className="ml-2 -mr-1 h-5 w-5 text-violet-200 hover:text-violet-100"
+                  aria-hidden="true"
+                />
+              ) : (
+                <ChevronDownIcon
+                  className="ml-2 -mr-1 h-5 w-5 text-violet-200 hover:text-violet-100"
+                  aria-hidden="true"
+                />
+              )}
             </Menu.Button>
           </div>
           <Transition

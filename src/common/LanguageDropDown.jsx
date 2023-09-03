@@ -78,7 +78,7 @@ function LanguageDropDown() {
                         {({ active }) => (
                           <div
                             className={`${
-                              active ? " text-white" : "text-white"
+                              active ? " bg-[#41415B] text-white" : "text-white"
                             } flex items-center gap-2 px-4`}
                           >
                             <img src={val.imgurl} alt="" className="w-6" />
