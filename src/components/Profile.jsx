@@ -15,7 +15,7 @@ function Profile() {
             alt=""
             className="w-[140px] h-[140px]  rounded-full"
           />
-          <button className=" mt-5 font-bold rounded-[2px] p-3 gradient">
+          <button className=" mt-5 font-bold rounded-[5px] py-2 px-3 gradient">
             My NFTs
           </button>
           <span className="text-white/40 mt-2">
@@ -29,7 +29,7 @@ function Profile() {
               placeholder="Woodco76"
               className="w-full rounded-[3px] bg-alto/[13%] h-10 focus:outline-none p-2"
             />
-            <div className=" cursor-pointer flex absolute text-white right-3 bg-slate-400 p-2 rounded-[5px] top-2  md:top-2 ">
+            <div className=" cursor-pointer flex absolute text-white right-3  p-2 rounded-[5px] top-2  md:top-2 ">
               <MdEdit />
             </div>
           </div>
@@ -41,7 +41,7 @@ function Profile() {
               placeholder="0xE3Fc41...2E0D5f43"
               className="w-full rounded-[3px] bg-alto/[13%] h-10 focus:outline-none p-2"
             />
-            <div className=" cursor-pointer flex absolute text-white right-3 bg-slate-400 p-2 rounded-[5px] top-2  md:top-2 ">
+            <div className=" cursor-pointer flex absolute text-white right-3  p-2 rounded-[5px] top-2  md:top-2 ">
               <BiCopy />
             </div>
           </div>
@@ -54,7 +54,7 @@ function Profile() {
               className="w-full rounded-[3px] bg-alto/[13%] h-10 focus:outline-none p-2"
             />
             <div className=" text-xs cursor-pointer font-semibold flex items-center gap-1 absolute text-white right-3 bg-[#54a9eb] p-2 rounded-[5px]  top-2  md:top-2 ">
-              <BiLogoTelegram className="text-lg" /> Connect My Telegram
+              <BiLogoTelegram className="text-base" /> Connect My Telegram
             </div>
           </div>
         </div>

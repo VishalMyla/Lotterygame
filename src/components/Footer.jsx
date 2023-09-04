@@ -8,17 +8,23 @@ function Footer() {
     <>
       <div className="bg-black mt-10">
         <div className="max-w-[1024px] px-4 m-auto">
-          <div class="grid   grid-cols-1  sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 py-10 border-b  border-ebony text-white">
+          <div className="grid   grid-cols-1  sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 py-10 border-b  border-ebony text-white">
             <div className="flex flex-col text-base font-medium">
-              <span>Provability Explained</span>
-              <span>Recommended Wallets</span>
-              <span>Responsible Gambling</span>
+              <span className="cursor-pointer">Provability Explained</span>
+              <span className="pt-[10px] cursor-pointer">
+                Recommended Wallets
+              </span>
+              <span className="pt-[10px] cursor-pointer">
+                Responsible Gambling
+              </span>
             </div>
             <div className="flex flex-col text-base font-medium">
-              <span>About Us</span>
-              <span>Terms & Conditions</span>
-              <span>Privacy Policy</span>
-              <span>Aml Policy</span>
+              <span className="cursor-pointer">About Us</span>
+              <span className="pt-[10px] cursor-pointer">
+                Terms & Conditions
+              </span>
+              <span className="pt-[10px] cursor-pointer">Privacy Policy</span>
+              <span className="pt-[10px] cursor-pointer">Aml Policy</span>
             </div>
             <div className="flex flex-col text-base font-medium">
               <span>Follow us</span>

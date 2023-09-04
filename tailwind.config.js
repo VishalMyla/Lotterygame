@@ -15,9 +15,11 @@ export default {
         comet: "#626681",
         shark: "#1d1e22",
         charade: "#2b2f3c",
+        red: " #FF3E3E",
       },
       fontFamily: {
         Montserrat: ["Montserrat", "sans-serif"],
+        ArcadeClassic: "ArcadeClassic",
       },
     },
   },

@@ -1,31 +1,41 @@
+import { useState } from "react";
 import bingo from "../assets/images/bingo.png";
 import lottery from "../assets/images/lottery.png";
-// import LoginModal from "../common/LoginModal";
 import CarousalSlider from "../common/CarousalSlider";
+import GameModal from "../common/GameModal";
 
+const GamesData = [
+  {
+    image: bingo,
+    heading: "Bingo",
+    title: "Original",
+  },
+  {
+    image: lottery,
+    heading: "Lottery",
+    title: "Original",
+  },
+  {
+    image: bingo,
+    heading: "Bingo",
+    title: "Original",
+  },
+  {
+    image: lottery,
+    heading: "Lottery",
+    title: "Original",
+  },
+];
 function Herosection() {
-  const GamesData = [
-    {
-      image: bingo,
-      heading: "Bingo",
-      title: "Original",
-    },
-    {
-      image: lottery,
-      heading: "Lottery",
-      title: "Original",
-    },
-    {
-      image: bingo,
-      heading: "Bingo",
-      title: "Original",
-    },
-    {
-      image: lottery,
-      heading: "Lottery",
-      title: "Original",
-    },
-  ];
+  let [isOpen, setIsOpen] = useState(false);
+
+  function closeModal() {
+    setIsOpen(false);
+  }
+
+  function openModal() {
+    setIsOpen(true);
+  }
 
   return (
     <>
@@ -38,7 +48,11 @@ function Herosection() {
               {GamesData.map((value, id) => {
                 return (
                   <>
-                    <div className=" rounded-[15px] bg-rhino" key={id}>
+                    <div
+                      className=" rounded-[15px] cursor-pointer bg-rhino"
+                      key={id}
+                      onClick={openModal}
+                    >
                       <img
                         src={value.image}
                         alt=""
@@ -60,6 +74,7 @@ function Herosection() {
           </div>
         </div>
       </div>
+      <GameModal isOpen={isOpen} closeModal={closeModal} />
     </>
   );
 }
