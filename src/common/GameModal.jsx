@@ -1,5 +1,5 @@
 import { Dialog, Transition } from "@headlessui/react";
-import { Fragment, useEffect, useState } from "react";
+import { Fragment, useState } from "react";
 import AnimatedNumbers from "react-animated-numbers";
 import LossModal from "../common/LossModal";
 import WonModal from "../common/WonModal";
@@ -34,8 +34,9 @@ function GameModal({ isOpen, closeModal }) {
 
   const handleClick = () => {
     setShowNumber(true);
-    setNum(randomNumberInRange(1, 999));
-    if (inputnumber === num) {
+    setNum(randomNumberInRange(0, 9));
+    const inputNum = parseInt(inputnumber);
+    if (inputNum === num) {
       setLossModal(false);
       setTimeout(() => {
         SetWonModal(true);
@@ -154,8 +155,10 @@ function GameModal({ isOpen, closeModal }) {
           </Dialog>
         </Transition>
       </div>
-      {lossmodal && <LossModal Wonopen={lossmodal} Wonclose={LossModalClose} />}
-      {wonmodal && <WonModal open={wonmodal} close={WonModalModal} />}
+      {lossmodal && (
+        <LossModal lossopen={lossmodal} lossclose={LossModalClose} />
+      )}
+      {wonmodal && <WonModal wonopen={wonmodal} wonclose={WonModalModal} />}
     </>
   );
 }

@@ -2,11 +2,11 @@ import { Dialog, Transition } from "@headlessui/react";
 import { Fragment } from "react";
 import lossimg from "../assets/images/lossimg.png";
 
-function LossModal({ Wonopen, Wonclose }) {
+function LossModal({ lossopen, lossclose }) {
   return (
     <>
-      <Transition appear show={Wonopen} as={Fragment}>
-        <Dialog as="div" className="relative z-10" onClose={Wonclose}>
+      <Transition appear show={lossopen} as={Fragment}>
+        <Dialog as="div" className="relative z-10" onClose={lossclose}>
           <Transition.Child
             as={Fragment}
             enter="ease-out duration-300"

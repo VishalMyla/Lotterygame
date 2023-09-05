@@ -6,11 +6,11 @@ import cong from "../assets/images/cong.png"
 
 
 
-function WonModal({ open, close }) {
+function WonModal({ wonopen, wonclose }) {
   return (
     <>
-      <Transition appear show={open} as={Fragment}>
-        <Dialog as="div" className="relative z-10" onClose={close}>
+      <Transition appear show={wonopen} as={Fragment}>
+        <Dialog as="div" className="relative z-10" onClose={wonclose}>
           <Transition.Child
             as={Fragment}
             enter="ease-out duration-300"
