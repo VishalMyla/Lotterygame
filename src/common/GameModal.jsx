@@ -1,22 +1,22 @@
 import { Dialog, Transition } from "@headlessui/react";
-import { Fragment, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
 import AnimatedNumbers from "react-animated-numbers";
 import LossModal from "../common/LossModal";
 import WonModal from "../common/WonModal";
 
 function GameModal({ isOpen, closeModal }) {
-  const [inputamount, setInputAmount] = useState(null);
+  const [isamount, setIsAmount] = useState(null);
   const [num, setNum] = useState(0);
-  const [inputnumber, setInputNumber] = useState(null);
+  const [isnumber, setIsNumber] = useState(null);
   const [shownumber, setShowNumber] = useState(false);
-  const [lossmodal, setLossModal] = useState(false);
-  const [wonmodal, SetWonModal] = useState(false);
+  const [isloss, setIsLoss] = useState(false);
+  const [iswon, SetIsWon] = useState(false);
 
   const handleInputamount = (e) => {
     const newamounts = e.target.value;
     setShowNumber(false);
     if (/^\d{0,3}$/.test(newamounts)) {
-      setInputAmount(newamounts);
+      setIsAmount(newamounts);
     }
   };
 
@@ -24,7 +24,7 @@ function GameModal({ isOpen, closeModal }) {
     setShowNumber(false);
     const newnumbers = e.target.value;
     if (/^\d{0,3}$/.test(newnumbers)) {
-      setInputNumber(newnumbers);
+      setIsNumber(newnumbers);
     }
   };
 
@@ -35,31 +35,25 @@ function GameModal({ isOpen, closeModal }) {
   const handleClick = () => {
     setShowNumber(true);
     setNum(randomNumberInRange(0, 9));
-    const inputNum = parseInt(inputnumber);
-    if (inputNum === num) {
-      setLossModal(false);
-      setTimeout(() => {
-        SetWonModal(true);
-        setInputAmount("");
-        setInputNumber("");
-      }, 5500);
+    if (parseInt(num) === parseInt(isnumber)) {
+      SetIsWon(true);
     } else {
-      setTimeout(() => {
-        setLossModal(true);
-        setInputAmount("");
-        setInputNumber("");
-      }, 5500);
-      SetWonModal(false);
+      setIsLoss(true);
     }
   };
+
   const LossModalClose = () => {
-    setLossModal(false);
+    setIsLoss(false);
     setShowNumber(false);
+    setIsNumber("");
+    setIsAmount("");
   };
 
   const WonModalModal = () => {
-    SetWonModal(false);
+    SetIsWon(false);
     setShowNumber(false);
+    setIsNumber("");
+    setIsAmount("");
   };
 
   return (
@@ -99,7 +93,7 @@ function GameModal({ isOpen, closeModal }) {
                         <input
                           placeholder="Amount"
                           type="number"
-                          value={inputamount}
+                          value={isamount}
                           onChange={handleInputamount}
                           className="focus:outline-none p-2 md:w-[20rem]  bg-white/[13%] h-9 rounded-[5px]"
                         />
@@ -111,7 +105,7 @@ function GameModal({ isOpen, closeModal }) {
                         <input
                           placeholder="Number"
                           type="number"
-                          value={inputnumber}
+                          value={isnumber}
                           onChange={handleInputnumber}
                           className="focus:outline-none p-2 bg-white/[13%] md:w-[20rem] h-9 rounded-[5px]"
                         />
@@ -122,7 +116,7 @@ function GameModal({ isOpen, closeModal }) {
                       <button
                         className="gradient font-semibold text-xl px-3 py-2 md:w-[20rem] rounded-[5px]"
                         onClick={handleClick}
-                        disabled={!inputamount || !inputnumber}
+                        disabled={!isamount || !isnumber}
                       >
                         Submit
                       </button>
@@ -155,10 +149,8 @@ function GameModal({ isOpen, closeModal }) {
           </Dialog>
         </Transition>
       </div>
-      {lossmodal && (
-        <LossModal lossopen={lossmodal} lossclose={LossModalClose} />
-      )}
-      {wonmodal && <WonModal wonopen={wonmodal} wonclose={WonModalModal} />}
+      {isloss && <LossModal lossopen={isloss} lossclose={LossModalClose} />}
+      {iswon && <WonModal wonopen={iswon} wonclose={WonModalModal} />}
     </>
   );
 }
