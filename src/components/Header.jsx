@@ -1,48 +1,52 @@
 import { useState } from "react";
-import Logo from "../assets/images/Logo.png";
-import eth from "../assets/images/eth.png";
-import DropDown from "../common/DropDown";
-import LoginModal from "../common/LoginModal";
+import Logo from '../assets/images/logo1.jpg'
+import eth from '../assets/images/eth.png'
+import DropDown from '../common/DropDown'
+import LoginModal from '../common/LoginModal'
+import { toast } from 'react-toastify'
 
 function Header() {
-  let [isOpen, setIsOpen] = useState(false);
-  let [isConnected, setIsConnected] = useState(false);
+  let [isOpen, setIsOpen] = useState(false)
+  let [isConnected, setIsConnected] = useState(false)
+
+  // const onClickConnect = () => {
+  // }
 
   function closeModal() {
-    setIsOpen(false);
+    setIsOpen(false)
   }
 
   function openModal() {
-    setIsOpen(true);
+    setIsOpen(true)
   }
 
   function onCreatAccount() {
-    closeModal();
-    setIsConnected(true);
+    closeModal()
+    setIsConnected(true)
   }
 
   return (
     <>
-      <div className="bg-rhino sticky top-0 z-10">
-        <div className="flex justify-between items-center px-16 py-[18px]">
+      <div className='bg-rhino sticky top-0 z-10'>
+        <div className='flex justify-between items-center px-16 py-[18px]'>
           <div>
-            <a href="/" target="_self">
-              <img src={Logo} alt="Logo" />
+            <a href='/' target='_self'>
+              <img src={Logo} alt='Logo' height={60} width={60} />
             </a>
           </div>
 
           {isConnected ? (
             <>
-              <div className="gap-[10px] flex items-center text-white  ">
-                <div className="flex items-center gap-[10px] bg-blue/100 w-[197px] pl-5 rounded-[5px] py-1">
-                  <img src={eth} alt="eth" />
-                  <div className="flex flex-col text-base">
+              <div className='gap-[10px] flex items-center text-white  '>
+                <div className='flex items-center gap-[10px] bg-blue/100 w-[197px] pl-5 rounded-[5px] py-1'>
+                  <img src={eth} alt='eth' />
+                  <div className='flex flex-col text-base'>
                     <span>0.00</span>
-                    <span className="text-xs text-white/[44%]">BUSD</span>
+                    <span className='text-xs text-white/[44%]'>BUSD</span>
                   </div>
                 </div>
                 <div>
-                  <button className="font-Montserrat text-lg gradient font-semibold px-7 py-[9px]  rounded-[5px] ">
+                  <button className='font-Montserrat text-lg gradient font-semibold px-7 py-[9px]  rounded-[5px] '>
                     Deposit
                   </button>
                 </div>
@@ -51,16 +55,19 @@ function Header() {
             </>
           ) : (
             <>
-              <div className=" flex items-center gap-10 text-white">
-                <div>
-                  <button className="font-Montserrat text-base font-semibold">
+              <div className=' flex items-center gap-10 text-white'>
+                {/* <div>
+                  <button
+                    className='font-Montserrat text-base font-semibold'
+                    onClick={signupAccount}
+                  >
                     Sign up
                   </button>
-                </div>
+                </div> */}
                 <div>
                   <button
-                    className="font-Montserrat text-base gradient font-semibold px-7 py-[3px]  rounded-[10px] "
-                    onClick={openModal}
+                    className='font-Montserrat text-base gradient font-semibold px-7 py-[3px]  rounded-[10px] '
+                    // onClick={onClickConnect}
                   >
                     Connect
                   </button>
@@ -77,6 +84,6 @@ function Header() {
         onCreatAccount={onCreatAccount}
       />
     </>
-  );
+  )
 }
 export default Header;
