@@ -1,9 +1,13 @@
 import { Dialog, Transition } from "@headlessui/react";
-import { Fragment } from "react";
-import LoginPubg from "../assets/images/LoginPubg.png";
+import { Fragment, useContext } from 'react'
+import LoginPubg from '../assets/images/LoginPubg.png'
 import Logo from '../assets/images/logo1.jpg'
+import { LotteryContext } from '../contexts/LotteryContext'
 
-function LoginModal({ isOpen, closeModal, onCreatAccount }) {
+function LoginModal() {
+  const { isOpen, closeModal, onCreatAccount, setUsername,username } =
+    useContext(LotteryContext)
+
   return (
     <div className='container mx-auto '>
       <Transition appear show={isOpen} as={Fragment}>
@@ -55,10 +59,14 @@ function LoginModal({ isOpen, closeModal, onCreatAccount }) {
                           <label className='flex items-center gap-2'>
                             Nickname
                             <span className='text-manatee font-medium text-xs'>
-                              (Can be changed later)
+                              (username)
                             </span>
                           </label>
-                          <input className='rounded-[5px] p-2 bg-alto/[13%] w-full  h-[45px]  focus:outline-none' />
+                          <input
+                            className='rounded-[5px] p-2 bg-alto/[13%] w-full  h-[45px]  focus:outline-none'
+                            onChange={(e) => setUsername(e.target.value)}
+                            value={username}
+                          />
                         </div>
                         <div className='my-5 md:my-14 gradient rounded-[5px]'>
                           <button

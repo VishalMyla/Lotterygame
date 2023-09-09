@@ -1,29 +1,53 @@
-import { useState } from "react";
+import { useState, useEffect, useContext } from 'react'
 import Logo from '../assets/images/logo1.jpg'
 import eth from '../assets/images/eth.png'
 import DropDown from '../common/DropDown'
 import LoginModal from '../common/LoginModal'
-import { toast } from 'react-toastify'
+import { LotteryContext } from '../contexts/LotteryContext'
+import DepositModal from '../common/DepositModal'
+import WithdrawModal from '../common/withdrawModal'
 
 function Header() {
-  let [isOpen, setIsOpen] = useState(false)
-  let [isConnected, setIsConnected] = useState(false)
-
-  // const onClickConnect = () => {
-  // }
+  const {
+    checkMetamaskInstallation,
+    initiateWalletConnection,
+    account,
+    auth,
+    balance,
+    getUserName,
+    getUserBal,
+    depositFunds,
+    openModal,
+    contract,
+  } = useContext(LotteryContext)
+  const [isOpen, setIsOpen] = useState(false)
 
   function closeModal() {
     setIsOpen(false)
   }
 
-  function openModal() {
+  const onClickConnect = async () => {
+    const mm = await checkMetamaskInstallation()
+
+    if (mm) {
+      await initiateWalletConnection()
+    }
+  }
+
+  const onDepositClick = async () => {
+    openModal()
+  }
+
+  const onWithdrawClick = async () => {
     setIsOpen(true)
   }
 
-  function onCreatAccount() {
-    closeModal()
-    setIsConnected(true)
-  }
+  useEffect(() => {
+    console.log('loaded..', account, auth, balance)
+    if (contract) {
+      getUserBal()
+    }
+  }, [account, balance, auth])
 
   return (
     <>
@@ -35,19 +59,30 @@ function Header() {
             </a>
           </div>
 
-          {isConnected ? (
+          {auth ? (
             <>
-              <div className='gap-[10px] flex items-center text-white  '>
+              <div className='gap-[15px] flex items-center text-white  '>
                 <div className='flex items-center gap-[10px] bg-blue/100 w-[197px] pl-5 rounded-[5px] py-1'>
                   <img src={eth} alt='eth' />
                   <div className='flex flex-col text-base'>
-                    <span>0.00</span>
-                    <span className='text-xs text-white/[44%]'>BUSD</span>
+                    <span>{balance}</span>
+                    <span className='text-xs text-white/[44%]'>BUSDT</span>
                   </div>
                 </div>
                 <div>
-                  <button className='font-Montserrat text-lg gradient font-semibold px-7 py-[9px]  rounded-[5px] '>
+                  <button
+                    className='font-Montserrat text-lg gradient font-semibold px-7 py-[9px]  rounded-[5px] '
+                    onClick={onDepositClick}
+                  >
                     Deposit
+                  </button>
+                </div>
+                <div>
+                  <button
+                    className='font-Montserrat text-lg gradient font-semibold px-7 py-[9px]  rounded-[5px] '
+                    onClick={onWithdrawClick}
+                  >
+                    Withdraw
                   </button>
                 </div>
               </div>
@@ -67,7 +102,7 @@ function Header() {
                 <div>
                   <button
                     className='font-Montserrat text-base gradient font-semibold px-7 py-[3px]  rounded-[10px] '
-                    // onClick={onClickConnect}
+                    onClick={onClickConnect}
                   >
                     Connect
                   </button>
@@ -77,13 +112,10 @@ function Header() {
           )}
         </div>
       </div>
-
-      <LoginModal
-        isOpen={isOpen}
-        closeModal={closeModal}
-        onCreatAccount={onCreatAccount}
-      />
+      {!auth && <LoginModal />}
+      {auth && <DepositModal />}
+      {auth && <WithdrawModal isOpen={isOpen} closeModal={closeModal} />}
     </>
   )
 }
-export default Header;
+export default Header
